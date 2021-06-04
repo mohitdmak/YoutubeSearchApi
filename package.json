@@ -1,0 +1,23 @@
+{
+  "name": "youtubesearchapi",
+  "version": "1.0.0",
+  "description": "basic search api for youtube videos",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohitdmak/YoutubeSearchApi.git"
+  },
+  "author": "mohitdmak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohitdmak/YoutubeSearchApi/issues"
+  },
+  "homepage": "https://github.com/mohitdmak/YoutubeSearchApi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12"
+  }
+}
