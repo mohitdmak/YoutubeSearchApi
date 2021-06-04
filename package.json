@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/mohitdmak/YoutubeSearchApi#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
-    "mongoose": "^5.12.12"
+    "mongoose": "^5.12.12",
+    "node-fetch": "^2.6.1"
   }
 }
