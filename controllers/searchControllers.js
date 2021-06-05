@@ -115,7 +115,7 @@ async function SearchResults(maxResults, Query, API_KEY, first){
 // Controller to provide results as per request
 const provideResults = async (req, res) => {
     var maxResults = 2;
-    var Query = req.params.id;
+    var Query = req.params.searchquery;
 
     var data = await SearchResults(maxResults, Query, API_KEY, true);
     res.status(200).json(data);
