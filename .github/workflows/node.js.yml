@@ -33,4 +33,4 @@ jobs:
     - name: Run tests
       env:
         MONGO_GITHUB_URI: ${{ secrets.MONGO_GITHUB_URI }}
-      run: npm run github-test
+      run: npm run test
