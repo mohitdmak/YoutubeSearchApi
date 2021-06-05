@@ -1,0 +1,22 @@
+version: "3.9"
+
+# Docker containers in the network
+services:
+  
+  dev_container:
+
+    # Passing build context
+    build: .
+
+    container_name: DevContainer
+
+    # Restart in-case of Test Container failure
+    restart: on-failure
+
+    # Creating volume bind between source code and working dir
+    volumes:
+      - .:/YoutubeSearchApi
+
+    # Binding port 3000 with host os.
+    ports:
+      - 3000:3000
