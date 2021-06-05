@@ -2,15 +2,16 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 
-// creating search results schema
-const searchSchema = new schema({
+
+// creating video details schema
+const videoSchema = new schema({
     title: {
         type: String,
         required: true
     },
     description: {
         type: String,
-        required: true
+        required: false
     },
     thumbnail: {
         type: String,
@@ -22,8 +23,27 @@ const searchSchema = new schema({
     }
 });
 
+// creating search results schema
+const searchSchema = new schema({
+    query: {
+        type: String,
+        required: true
+    },
+    maxResults: {
+        type: Number,
+        required: true
+    },
+    videoDetails: [
+        videoSchema
+    ]
+});
+
 // saving schema to collection 'videos'
-const searchData = mongoose.model('video', searchSchema);
+const videoData = mongoose.model('video', videoSchema);
+const searchData = mongoose.model('search', searchSchema);
 
 // exporting mongo model
-module.exports = searchData;
+module.exports = {
+    searchData,
+    videoData
+}
