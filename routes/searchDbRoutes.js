@@ -3,10 +3,10 @@ var express = require('express');
 var Router = express.Router();
 
 // Importing controllers 
-const Controllers = require('../controllers/searchControllers');
+const Controllers = require('../controllers/findControllers');
 
 
-Router.get('/:id', Controllers.provideResults);
+Router.get('/:searchquery', Controllers.provideResults);
 
 
 // exporting router

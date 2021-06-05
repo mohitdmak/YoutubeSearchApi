@@ -14,8 +14,11 @@ app.get('/', (req, res) => {
 const API_KEY = require('./config/apiKey');
 const fetch = require('axios');
 
-const Router = require('./routes/searchRoutes');
-app.use('/search', Router);
+const ytRouter = require('./routes/searchYtRoutes');
+app.use('/search', ytRouter);
+
+const dbRouter = require('./routes/searchDbRoutes');
+app.use('/find', dbRouter)
 
 // app.get('/:id', async (req, res) =>{
 //     var search = req.params.id;
