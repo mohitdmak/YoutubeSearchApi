@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
     res.json({ response: "Hello Welcome to Yt SearchApi Homepage !" });
 });
 
-const API_KEY = require('./config/apiKey');
 const fetch = require('axios');
 
 const ytRouter = require('./routes/searchYtRoutes');
