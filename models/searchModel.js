@@ -2,28 +2,26 @@
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
 
+// Importing video schema
+var videoSchema = require('./videoModel').videoSchema;
+
 // creating search results schema
 const searchSchema = new schema({
-    title: {
+    query: {
         type: String,
         required: true
     },
-    description: {
-        type: String,
+    maxResults: {
+        type: Number,
         required: true
     },
-    thumbnail: {
-        type: String,
-        required: true
-    },
-    publishTime: {
-        type: String,
-        required: true
-    }
+    videoDetails: [
+        videoSchema
+    ]
 });
 
 // saving schema to collection 'videos'
-const searchData = mongoose.model('video', searchSchema);
+const searchData = mongoose.model('search', searchSchema);
 
 // exporting mongo model
 module.exports = searchData;
