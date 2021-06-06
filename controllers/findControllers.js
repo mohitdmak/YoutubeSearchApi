@@ -2,11 +2,8 @@
 var fetch = require('axios');
 
 // Importing mongo model for storing search data and video details
-var searchData = require('../models/searchModel').searchData;
-var videoData = require('../models/searchModel').videoData;
-
-// Importing API_KEY 
-const API_KEY = require('../config/apiKey');
+var searchData = require('../models/searchModel');
+var videoData = require('../models/videoModel').videoData;
 
 // Search Function which regularly refreshes search results
 async function findByTitle(Query, title){
@@ -104,7 +101,7 @@ const provideResults = async (req, res) => {
         var data = await findByDescription(Query, description);
     }
     else if(req.query.title && req.query.description){
-        
+
         var title = req.query.title;
         var description = req.query.description;
         var data = await findByTitleAndDescription(Query, title, description);

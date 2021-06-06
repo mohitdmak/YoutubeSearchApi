@@ -2,11 +2,15 @@
 var fetch = require('axios');
 
 // Importing mongo model for storing search data and video details
-var searchData = require('../models/searchModel').searchData;
-var videoData = require('../models/searchModel').videoData;
+var searchData = require('../models/searchModel');
+var videoData = require('../models/videoModel').videoData;
 
 // Importing API_KEY 
-const keys = require('../config/apiKey');
+if(process.env.API_KEY_GITHUB){
+    const keys = process.env.API_KEY_GITHUB;
+}else{
+    const keys = require('../config/apiKey');
+}
 
 // Stores queries for which server is already updating results in background every 10 seconds.
 var initializedPinging = [];
