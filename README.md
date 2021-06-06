@@ -26,6 +26,7 @@
 <details>
 <summary> Create a Mongo Atlas Connection URI</summary>
 <br>
+
 - Login to Mongo Atlas
 - Create a project and build new cluster ( it provides a free sandbox )
 - Create Database users and secure network access to your machine's IP only
@@ -43,7 +44,7 @@
 
 - Create a new project and enable the Yt Data API v3 at https://console.cloud.google.com/apis/api/youtube.googleapis.com
 
-- Create Credentials and secure the key to allow access to only the created api, and download credentials into your project folder
+- Create Credentials and secure the key to allow access to only the created api, and download credentials into your project folder.
 
 - Preferrably procure multiple keys as the project will automatically cycles through keys, as their request quotas get exhausted.
 </details>
@@ -69,8 +70,8 @@ from your project.
 ### Containerise app
 - This requires your machine to have Docker runtime installed. If it isnt already install by refering these
   - (Mac OS) https://docs.docker.com/docker-for-mac/install/
-(Windows) https://docs.docker.com/docker-for-windows/install/
-(Linux) https://docs.docker.com/engine/install/ (Browse by distributions)
+  - (Windows) https://docs.docker.com/docker-for-windows/install/
+  - (Linux) https://docs.docker.com/engine/install/ (Browse by distributions)
 
   - Further Install docker compose
   https://docs.docker.com/compose/install/
