@@ -5,10 +5,11 @@ const app = require('./app');
 const mongoose = require('mongoose');
 
 // Importing mongodb connection uri for atlas hosted db
+var dbURI;
 if(process.env.MONGO_GITHUB_URI){
     dbURI = process.env.MONGO_GITHUB_URI;
 }else{
-    dbURI = require('../config/mongouri');
+    dbURI = require('./config/mongouri');
 }
 
 // setting mongo parameters to prevent depreciation notices

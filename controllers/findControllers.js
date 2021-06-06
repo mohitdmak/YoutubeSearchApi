@@ -15,11 +15,17 @@ async function findByTitle(Query, title){
         var searchDB = await searchData.findOne({ query: Query });
 
         if(searchDB === null){
+
             return null;
         }
         else{
 
-           // var data = await searchData.find({ query: Query, videoDetails.title: title});
+            var data;
+            for(video in searchDB.videoDetails){
+                if( searchDB.videoDetails[video].title == title ){
+                    data = searchDB.videoDetails[video];
+                }
+            }
             return data;
         }
     }
@@ -40,7 +46,12 @@ async function findByDescription(Query, description){
         }
         else{
 
-            var data = await searchDB.videoDetails.find({ description: description });
+            var data;
+            for(video in searchDB.videoDetails){
+                if( searchDB.videoDetails[video].description == description ){
+                    data = searchDB.videoDetails[video];
+                }
+            }
             return data;
         }
     }
@@ -61,7 +72,12 @@ async function findByTitleAndDescription(Query, title, description){
         }
         else{
 
-            var data = await searchDB.videoDetails.find({ title: title, description: description });
+            var data;
+            for(video in searchDB.videoDetails){
+                if( searchDB.videoDetails[video].title == title && searchDB.videoDetails[video].description == description){
+                    data = searchDB.videoDetails[video];
+                }
+            }
             return data;
         }
     }
@@ -78,14 +94,17 @@ const provideResults = async (req, res) => {
     var Query = req.params.searchquery;
 
     if(req.query.title && !req.query.description){
+
         var title = req.query.title;
         var data = await findByTitle(Query, title);
     }
     else if(req.query.description && !req.query.title){
+
         var description = req.query.description;
         var data = await findByDescription(Query, description);
     }
     else if(req.query.title && req.query.description){
+        
         var title = req.query.title;
         var description = req.query.description;
         var data = await findByTitleAndDescription(Query, title, description);
