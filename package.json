@@ -21,7 +21,7 @@
     "axios": "^0.21.1",
     "chai": "^4.3.4",
     "express": "^4.17.1",
-    "mocha": "^8.4.0",
+    "mocha": "^10.1.0",
     "mongoose": "^5.12.12",
     "node-fetch": "^2.6.1",
     "supertest": "^6.1.3"
